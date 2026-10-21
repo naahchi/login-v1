@@ -25,7 +25,7 @@
   <script src="login.js"></script>
   <script>
     const s = ToolLogin.getSession();
-    if (!s || !s.token) location.replace("login-v1/login");
+    if (!s || !s.token) location.replace("./login");
     else {
       document.getElementById("welcome").textContent = "Signed in as " + s.username;
       ToolLogin.verify();
