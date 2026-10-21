@@ -3,7 +3,7 @@
  * Keep this file free of passwords, secrets, and private user data.
  */
 const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxVI0BKZjLwVqJrxQAqnnCb-hLmmSw_CK9VkQwxbC3-AOSx0U3UaUWZQ3m2QT43ZEPR/exec";
-const REDIRECT_AFTER_LOGIN = "login-v1";
+const REDIRECT_AFTER_LOGIN = "/";
 const SESSION_KEY = "tool_login_session_v1";
 
 const loginForm = document.getElementById("loginForm");
@@ -55,7 +55,7 @@ window.addEventListener("message", (event) => {
   } else if (pendingAction === "verify") {
     if (!result.ok) {
       sessionStorage.removeItem(SESSION_KEY);
-      window.location.assign("login-v1");
+      window.location.assign("/");
     }
   }
 });
@@ -87,7 +87,7 @@ window.ToolLogin = {
     const session = getSession();
     if (!session || !session.token || Date.now() > session.expiresAt) {
       sessionStorage.removeItem(SESSION_KEY);
-      window.location.assign("login-v1");
+      window.location.assign("/");
       return;
     }
     sendRequest({ action: "verify", token: session.token });
@@ -96,6 +96,6 @@ window.ToolLogin = {
     const session = getSession();
     sessionStorage.removeItem(SESSION_KEY);
     if (session && session.token) sendRequest({ action: "logout", token: session.token });
-    window.location.assign("login-v1");
+    window.location.assign("/");
   }
 };
