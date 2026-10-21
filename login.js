@@ -3,6 +3,7 @@
  * Keep this file free of passwords, secrets, and private user data.
  */
 const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxVI0BKZjLwVqJrxQAqnnCb-hLmmSw_CK9VkQwxbC3-AOSx0U3UaUWZQ3m2QT43ZEPR/exec";
+// const REDIRECT_AFTER_LOGIN = "http://127.0.0.1:5500/";
 const REDIRECT_AFTER_LOGIN = "./";
 const SESSION_KEY = "tool_login_session_v1";
 
